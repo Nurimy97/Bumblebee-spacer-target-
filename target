@@ -1,0 +1,4 @@
+#!/bin/bash
+target=$(cat ~/.config/i3/config | grep status_command | awk '{print $2}' FS='=' | awk '{print $1}')
+sed "s/$target/$1/g" ~/.config/i3/config > ~/.config/i3/newarchivo
+mv ~/.config/i3/newarchivo ~/.config/i3/config
